@@ -2,16 +2,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
-import {
-  HamburgerContextProvider,
-  FriesContextProvider
-} from "./HamburgerContext"
+import { MenuItemsContextProvider } from "./MenuItemsContext"
 
 ReactDOM.render(
-  <HamburgerContextProvider>
-    <FriesContextProvider>
-      <App />
-    </FriesContextProvider>
-  </HamburgerContextProvider>,
+  <MenuItemsContextProvider>
+    <App />
+  </MenuItemsContextProvider>,
   document.getElementById("root")
 )

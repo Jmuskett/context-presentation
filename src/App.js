@@ -1,23 +1,29 @@
 //App.js
-import React from "react"
-import { HamburgerContext, FriesContext } from "./HamburgerContext"
+import React, { useContext } from "react"
+import { MenuItemsContext } from "./MenuItemsContext"
 
 function App() {
+  const { state, dispatch } = useContext(MenuItemsContext)
+  const { hamburgerCount, friesCount, milkshakeCount } = state
+
   return (
-    <HamburgerContext.Consumer>
-      {({ hamburgerCount }) => (
-        <FriesContext.Consumer>
-          {({ friesCount }) => (
-            <div>
-              <p>
-                Great news, John - You have {hamburgerCount} {`\u{1F354}`} and{" "}
-                {friesCount} {`\u{1F35F}`}
-              </p>
-            </div>
-          )}
-        </FriesContext.Consumer>
-      )}
-    </HamburgerContext.Consumer>
+    <div>
+      <div>
+        <p>Great news, John - This is how much food you have...</p>
+      </div>
+      <div>
+        <p onClick={() => dispatch({ type: "incrementHamburgers" })}>
+          {`\u{1F354}`} {hamburgerCount}
+        </p>
+        <p onClick={() => dispatch({ type: "incrementFries" })}>
+          {`\u{1F35F}`} {friesCount}
+        </p>
+        <p onClick={() => dispatch({ type: "incrementMilkshake" })}>
+          {`\u{1F95B}`}
+          {milkshakeCount}
+        </p>
+      </div>
+    </div>
   )
 }
 
