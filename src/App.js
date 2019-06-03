@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const FoodItemsWrapper = styled.div`
   display: flex;
-  margin: 20rem 2.2rem 0rem 2.2rem;
+  margin: 10rem 2.2rem 10rem 2.2rem;
   flex-wrap: wrap;
 `
 
@@ -33,7 +33,6 @@ const FoodItem = styled.div`
 
   &:active {
     box-shadow: 3px 4px 5px -2px rgba(0, 0, 0, 0.75);
-
     transition: 0.05s;
   }
 `

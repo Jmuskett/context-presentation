@@ -17,6 +17,8 @@ const menuReducer = (state, action) => {
       return { ...state, friesCount: state.friesCount + 1 }
     case "incrementMilkshake":
       return { ...state, milkshakeCount: state.milkshakeCount + 1 }
+    case "resetMenu":
+      return { hamburgerCount: 0, friesCount: 0, milkshakeCount: 0 }
     default:
       return { ...state }
   }
